@@ -4,7 +4,7 @@ module = wsgi:app
 master = true
 processes = 5
 
-socket = /tmp/flask-app.sock
+socket = /tmp/{{ project_name }}.sock
 uid = www-data
 gid = www-data
 chmod-socket = 666
