@@ -136,3 +136,6 @@ dmypy.json
 
 # Cython debug symbols
 cython_debug/
+
+flask-app/app/__pycache__/
+flask-app/__pycache__/
