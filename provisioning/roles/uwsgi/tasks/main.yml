@@ -1,0 +1,36 @@
+# vi: set sw=2 ts=2:
+# Uwsgi related tasks (install uwsgi, setup path for vessals and sockets)
+---
+
+- name: Assures uwsgi sites dir exists
+  file: path=/etc/uwsgi/sites state=directory
+
+- name: Assures uwsgi socket dir exists
+  file: path=/var/uwsgi state=directory
+        owner={{ user_name }} group=www-data
+
+- name: Create the wusgi init directory
+  file: path=/etc/init state=directory owner={{ user_name }} group={{ group_name }} mode=0700
+
+- name: Create the wusgi init directory
+  file: path=/var/log/uwsgi state=directory owner={{ user_name }} group={{ group_name }} mode=0700
+
+- name: uwsgi | Setup uwsgi config
+  template: src=uwsgi_config.ini.tpl dest={{ application_path }}/uwsgi_config.ini
+        owner={{ group_name }} group=www-data
+
+- name: uwsgi | Setup uwsgi_params
+  template: src=uwsgi_params.tpl dest={{ application_path }}/uwsgi_params
+        owner={{ group_name }} group=www-data
+
+- name: service | install service
+  template: src=service.tpl dest=/etc/systemd/system/flask-app.service
+        owner={{ group_name }} group=www-data
+
+- name: start uwsgi
+  service:
+    name: flask-app
+    state: started
+  become: yes
+  become_method: sudo
+  become_user: root

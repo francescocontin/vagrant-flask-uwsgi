@@ -1,0 +1,9 @@
+---
+
+project_name: flask-app
+
+home_path: /{{ user_name }}
+
+project_path: "{{ home_path }}/{{ project_name }}"
+
+application_path: "{{ project_path }}"

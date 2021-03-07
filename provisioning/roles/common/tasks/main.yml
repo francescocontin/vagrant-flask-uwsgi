@@ -1,0 +1,30 @@
+---
+
+- name: Ensure bash, OpenSSl, and libssl are the latest versions
+  apt: 
+    name:
+        - bash
+        - openssl
+        - libssl-dev
+        - libssl-doc
+
+    update_cache: yes
+    state: latest
+
+- name: Install common server packages
+  apt:
+    name:
+        - build-essential
+        - htop
+        - vim
+        - git
+        - unzip
+        - curl
+    state: present
+
+- name: Install uwsgi comp packages
+  apt:
+    name:
+        - libpcre3
+        - libpcre3-dev
+    state: present
