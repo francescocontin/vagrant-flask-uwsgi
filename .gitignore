@@ -140,4 +140,4 @@ cython_debug/
 flask-app/app/__pycache__/
 flask-app/__pycache__/
 
-.vagarnt/*
+.vagrant/*
