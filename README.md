@@ -20,6 +20,11 @@ vagrant up
 ### Access app
 Point your browser to: [http://10.0.0.15](http://10.0.0.15)
 
+###
+To see the code changes execute in the vagrant machine:
+```
+sudo service flask-app restart
+```
 
 ##### Credit
 * [Clove](https://github.com/clovisphere/simple-flask-vagrant-setup#flask-vagrant-setup), for the inspiration.
