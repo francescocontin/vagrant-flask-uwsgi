@@ -1,6 +1,6 @@
 # Vagrant Flask Uwsgi Nginx Set up
 
-Default dev environment for my flask projects. Done with Vagarnt, ansible to provision the VM. Flask + Uwsgi + Nginx.
+Default dev environment for my flask projects. Done with Vagarnt (Ubuntu 20.04), ansible to provision the VM. Flask + Uwsgi + Nginx.
 
 
 ## Prerequisite
